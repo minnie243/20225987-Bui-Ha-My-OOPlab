@@ -40,4 +40,7 @@ public class Store {
             System.out.println(i+1 + ". " + itemsInStore.get(i).getTitle() + " - " + itemsInStore.get(i).getCategory() + " - " + itemsInStore.get(i).getCost());
         }
     }
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
+    }
 }
