@@ -3,10 +3,8 @@ import hust.soict.globalict.aims.media.Disc;
 
 public class DigitalVideoDisc extends Disc implements Playable {
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super(title, category, cost, director);
-        this.length = length;
+        super(title, category, cost,director);
     }
-
     public boolean isMatch(String title) {
         title = title.toLowerCase();
         String[] words = title.split(" ");

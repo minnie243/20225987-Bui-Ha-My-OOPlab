@@ -1,14 +1,29 @@
 package hust.soict.globalict.aims;
+
 import hust.soict.globalict.aims.cart.Cart;
 import hust.soict.globalict.aims.media.*;
+import hust.soict.globalict.aims.screen.manager.StoreManagerScreen;
 import hust.soict.globalict.aims.store.*;
+
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Aims {
     private static Cart cart = new Cart();
     private static Store store = new Store();
     private static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         showMenu();
+        store.addMedia(new DigitalVideoDisc("DVD title", "DVD category", "DVD director", 10, 200.1f));
+        store.addMedia(new DigitalVideoDisc("DVD title 2", "DVD category", "DVD director", 10, 200.1f));
+        store.addMedia(new DigitalVideoDisc("DVD title 3", "DVD category", "DVD director", 10, 200.1f));
+        store.addMedia(new Book("Book title", "Book category", 300.1f, new ArrayList<String>(Arrays.asList("Book author 1", "Book author 2"))));
+        store.addMedia(new CompactDisc("CD title", "CD category", 100.1f, "CD director", "CD artist"));
+        store.addMedia(new CompactDisc("CD title 2", "CD category", 100.1f, "CD director", "CD artist"));
+        store.addMedia(new CompactDisc("CD title 3", "CD category", 100.1f, "CD director", "CD artist"));
+        store.addMedia(new Book("Book title 2", "Book category", 300.1f, new ArrayList<String>(Arrays.asList("Book author 3", "Book author 4"))));
+        StoreManagerScreen sms = new StoreManagerScreen(store);
     }
 
     public static void showMenu() {
